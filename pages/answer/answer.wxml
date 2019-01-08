@@ -1,0 +1,39 @@
+<view class='author' wx:if="{{!checkAnswerCommentIsopen}}">
+  <image class='author_img' src='{{curQuestion.programUser.headImg}}'></image>
+  <view class='author_user'>
+    <view>{{curQuestion.programUser.nickName}}</view>
+    <view style='color: #aaa;'>{{curQuestion.createTime}}</view>
+  </view>
+</view>
+<view class="box {{isScroll? 'boxhide':''}}" wx:if="{{!checkAnswerCommentIsopen}}">
+  <view class='author_box'>
+    <view class='que_content'>
+      <view style='padding-top: 20rpx;'>{{curQuestion.content}}</view>
+      <view class='typeTag'>
+        <span class="tag_item">{{curQuestion.bbsTopic.title}}</span>
+      </view>
+    </view>
+    <view class='user_list' wx:for="{{answerList}}" wx:key="*this">
+      <view class='user_item'>
+        <image class='user_img' src='{{item.programUser.headImg}}'></image>
+        <view class='user_name'>
+          <view>{{item.programUser.nickName}}</view>
+          <text style='color: #aaa;'>{{item.replyTime}}</text>
+        </view>
+      </view>
+      <p class='user_text'>
+        <span class="text_content" style="height:{{item.judgeTextHeight ? contentHeight : ''}}rpx">{{item.content}}</span>
+      </p>
+      <view style='margin-left: 70rpx; display: flex; justify-content: space-between; align-items: center;'>
+        <span bindtap='clickAnswerBtn' data-obj="{{item}}"  class="sel_answer_comment" id="answer1" wx:if="{{item.replyCount}}">共{{item.replyCount}}条回复  ></span>
+        <span bindtap='clickAnswerBtn' data-obj="{{item}}"  class="sel_answer_comment" id="answer2" wx:else>回复</span>
+        <text wx:if="{{item.judgeTextHeight}}" style='color: blue; font-size: 28rpx; margin-right: 20rpx;' data-obj="{{item}}" bindtap='showMoreBtn'>展开</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 外层回复 -->
+<view class='footer' style='bottom:{{winHeight}}rpx;'>
+  <input maxlength="-1" bindfocus="bindfocus" bindblur="bindblur" placeholder='{{answerPlacholder}}' id='onAnswer' value='{{contentValue}}' bindtap="onAnswerBtn" bindinput='getValue' focus='{{isOpenKeBoart}}'></input>
+  <view class='confirmBtn' bindtap='confirmNewBtn'>发送</view>
+</view>

@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+  <!-- <button open-type="openSetting" bindopensetting="callback">打开设置页</button> -->
+    <button class='accreditBtn' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button>
+    <!-- <block wx:else> -->
+    <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+    <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    <!-- </block> -->
+  </view>
+  <!-- <button open-type="share" bindtap='onShareAppMessage'>转发</button> -->
+  <!-- <audio id="myAudio" src='{{audioSrc}}'></audio> -->
+  <view class="usermotto">
+    <!-- <button bindtap="start">点击录音</button> -->
+    <!-- <button bindtap="stop">停止录音</button> -->
+    <text class='inputValue'>录入语音:  你好豆丁</text>
+    <!-- <button bindtap="play" class='confirmPlay'>播放</button> -->
+    <!-- <button bindtap="upload">上传</button> -->
+  </view>
+  <!-- <audio id="myAudio" src='{{audioSrc}}' bindplay="funplay"  bindended="funended"></audio> -->
+  <!-- <view class="gender">
+    <text>录音人员的性别：</text>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio color="#3dbfe7" value="1" checked='{{manChecked}}'>男</radio>
+      <radio color="#3dbfe7" value='2' style='margin-left: 10px;' checked='{{womanChecked}}'>女</radio>
+    </radio-group>
+  </view> -->
+  <view class='recorderNum' wx:if="{{recorderCount}}">您已录制<span style='color: red;'>{{recorderCount}}</span>次</view>
+
+  <div class="audioBox" id="dotBox" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtap="tap" bindlongpress="longTouch" bindtouchcancel="touchcancelFun">
+    <div class="dot" wx-if="{{judgeCurMotion}}">松开发送</div>
+    <div class="dot1" vx-else>{{recorderText}}</div>
+  </div>
+  <view class="loading" wx-if="{{loading}}">
+    <image src="img/loading.gif" mode="scaleToFill" style="width: 68rpx; height: 68rpx;"></image>
+  </view>
+  <!-- <button type="default" size="{{defaultSize}}" bindtap="showOperate" hover-class="other-button-hover" class="operate">
+    操作说明
+  </button> -->
+  <view>
+    <view style="font-size: 24rpx; width: 70%;text-align: center; margin: 0 auto;" wx:for="{{operateArray}}" wx:key="unique">{{item.message}}</view>
+  </view>
+  <!--隐藏区域  -->
+  <view class='maskLayer' id='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal'>
+    <view class='choose' id='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+      <view class='operate_message' wx:for="{{operateArray}}" wx:key="unique">
+        <span>{{item.message}}</span>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出红包 -->
+  <view class='showRedpack' wx:if="{{hasShowRedPack}}">
+    <view class='packageBg' bindtap="closeQrcode" id='closeQr'>
+      <image class='packPositin' src="http://cdn.itinga.cn/weixin/qrcode.png" mode="widthFix"  
+    data-src="http://cdn.itinga.cn/weixin/qrcode.png" 
+    bindtap="previewImage"></image>
+    </view>
+  </view>
+</view>

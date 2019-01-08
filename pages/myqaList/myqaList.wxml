@@ -1,0 +1,23 @@
+<view class='myQList'>
+  <view wx:if="{{lists.length}}" wx:for="{{lists}}" wx:key="index">
+    <view bindtap='bindViewTap' data-obj="{{item}}" class='q_list_item'>
+      <view class='question_box'>
+        <image class='question_Img' src="{{item.programUser.headImg}}"></image>
+        <view class='question_name'>{{item.programUser.nickName}}</view>
+      </view>
+      <view class='text'>{{item.content}}</view>
+      <view class='typeTag'>
+        <span class="tag_item">{{item.bbsTopic.title}}</span>
+      </view>
+      <view class='selectOperation'>
+        <view>
+          <image src='../test/img/点赞.png'></image>
+        </view>
+        <view class='comment_box'>
+          <image src='../test/img/comment.png'></image>
+          <text style='font-size: 26rpx; color: #aaa;'>{{item.replyCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

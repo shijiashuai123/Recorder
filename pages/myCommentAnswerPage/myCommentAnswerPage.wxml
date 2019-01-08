@@ -1,0 +1,40 @@
+<!--pages/myCommentAnswerPage/myCommentAnswerPage.wxml-->
+<view class='myQList'>
+  <view>
+    <view class='q_list_item'>
+      <view class='question_box'>
+        <image class='question_Img' src="{{commentUser.headImg}}"></image>
+        <view class='question_name'>{{commentUser.nickName}}</view>
+      </view>
+      <view class='text'>{{commentUser.content}}</view>
+      <view class='questionContent' bindtap='toQuestionPage' id='questionP'>
+        <view>原文：作者：{{bbsTopicContent.programUser.nickName}}问题:{{bbsTopicContent.content}}</view>
+      </view>
+      <view class='typeTag'>
+        <span class="tag_item">{{bbsTopicContent.bbsTopic.title}}</span>
+      </view>
+      <view class='user_list' wx:for="{{commnetAnserList}}" wx:key="*this">
+        <view class='user_item'>
+          <image class='user_img' src='{{item.programUser.headImg}}'></image>
+          <text class='user_name'>{{item.programUser.nickName}}</text>
+        </view>
+        <p class='user_text'><span>{{item.content}}</span></p>
+        <!-- 暂时不需要回复 -->
+        <!-- <view class='user_text'>
+          <span bindtap='clickAnswerBtn' data-obj="{{item}}"  class="sel_answer_comment" id="answer1" wx:if="{{item.replyCount}}">共{{item.replyCount}}条回复  ></span>
+          <span bindtap='clickAnswerBtn' data-obj="{{item}}"  class="sel_answer_comment" id="answer2" wx:else>回复</span>
+        </view> -->
+      </view>
+      <!-- 不需要点赞评论 -->
+      <!-- <view class='selectOperation'>
+        <view>
+          <image src='../test/img/点赞.png'></image>
+        </view>
+        <view class='comment_box'>
+          <image src='../test/img/comment.png'></image>
+          <text style='font-size: 26rpx; color: #aaa;'>{{item.replyCount}}</text>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>

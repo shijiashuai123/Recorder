@@ -1,0 +1,53 @@
+<view class='qaBox'>
+    <view class="tab-h">
+      <view style='display: flex; justify-content: space-around; margin-right: 10%;'>
+        <view class="tab-item {{currentTab==index?'active':''}}" wx:for="{{hotqaClassList}}" wx:key="*this"  data-current="{{index}}" bindtap="swichNav">{{item.title}}</view>
+      </view>
+        <!-- <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">健康</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">情感</view> -->
+    </view>
+    <view class='moreBtn' bindtap='moreBtn'>
+      <image src='{{moreBtnPic}}'></image>
+    </view>
+    <view class='moreBox' wx:if="{{isActiveMore}}" animation='{{animationData}}'>
+      <view class='more_title'>更多</view>
+      <view class='moreList'>
+        <view class='more_item' wx:for="{{qaClassList}}" bindtap='changeCurType' data-obj="{{item}}" wx:key="*this">{{item.title}}</view>
+      </view>
+    </view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="0" bindchange="switchTab"
+    style="height: 100vh;" bindanimationfinish="changeEnd">
+        <swiper-item class="swiper_item" wx:for="{{hotqaClassList}}" wx:key="*this">
+            <scroll-view scroll-y="true" class="scoll-h">
+              <view class='q_list_box' wx:if="{{lists.length}}" wx:for="{{lists}}" wx:key="index">
+                <view bindtap='bindViewTap' data-obj="{{item}}" class='q_list_item'>
+                  <view class='question_box'>
+                    <image class='question_Img' src="{{item.programUser.headImg}}"></image>
+                    <view class='question_name'>
+                      {{item.programUser.nickName}}
+                    </view>
+                  </view>
+                  <view class='text'>{{item.content}}</view>
+                  <view class='typeTag'>
+                    <span class="tag_item">{{item.bbsTopic.title}}</span>
+                  </view>
+                  <view class='selectOperation'>
+                    <view>
+                      <image src='./img/点赞.png'></image>
+                    </view>
+                    <view class='comment_box'>
+                      <image src='./img/comment.png'></image>
+                      <text style='font-size: 26rpx; color: #aaa;'>{{item.replyCount}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <!-- <view style='text-align: center;' wx:if="{{lists.length === 0}}" >暂无数据</view> -->
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <view class='addConfirmBtn' bindtap='newTypeQ'>
+      <image src='./img/add.png'></image>
+    </view>
+</view>
+<button bindtap='shareBtn'  open-type="share" >转发</button>

@@ -1,0 +1,45 @@
+/* pages/home/home.wxss */
+.user_box {
+  background: #f7f7f7;
+  height: 100%;
+}
+.user_top {
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 60rpx;
+  font-size: 24rpx;
+}
+.user_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 0 40rpx;
+}
+.user_name {
+
+}
+.uesr_integral {
+
+}
+.loginBtn {
+  background: #fff;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30rpx;
+}
+.loginBtn::after {
+  border: none;
+}
+.weui-cell_access {
+  display: flex;
+  align-items: center;
+}
+.weui-cell__bd {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}

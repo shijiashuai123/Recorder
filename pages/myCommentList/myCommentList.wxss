@@ -1,0 +1,62 @@
+/* pages/myCommentList/myCommentList.wxss */
+.myQList {
+  position: relative;
+  background-color: #f7f7f7;
+}
+.q_list_item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+}
+.question_box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+.question_Img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.question_name {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #000;
+  margin-left: 10rpx;
+}
+.text {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.typeTag {
+  font-size: 23rpx;
+  padding: 5rpx;
+}
+.typeTag .tag_item{
+  display: inline-block;
+  padding: 3rpx 10rpx;
+  border: 1px solid #3dbfe7;
+  border-radius: 15rpx;
+}
+.selectOperation {
+  display: flex;
+  justify-content: space-around;
+}
+.comment_box {
+  display: flex;
+  align-items: center;
+}
+.selectOperation image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.questionContent {
+  border: 1px solid #eee;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+}

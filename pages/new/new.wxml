@@ -1,0 +1,7 @@
+<!--pages/new/new.wxml-->
+<textarea class='inputBox' value='{{bbsTopicContent.content}}' bindinput='watchValue' placeholder="{{inuptPlaceHolder}}" auto-height focus='true'/>
+<view class='footer'>
+  <!-- <input placeholder='说点什么'></input> -->
+  <button bindtap='confirmNewBtn' class="confirmNew {{judgeActive ?'confirmActive':''}}">确定新建</button>
+  <!-- <input class="confirmNew" focus='{{judgeCurFocus}}'></input> -->
+</view>

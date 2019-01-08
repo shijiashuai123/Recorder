@@ -1,0 +1,26 @@
+/* pages/ranking/ranking.wxss */
+.page__hd {
+  display: flex;
+  padding: 5px 0px;
+  /* width: 100%; */
+  border-top: 1px solid #aaa;
+}
+.page__hd:last-child {
+  border-bottom: 1px solid #aaa;
+}
+.tableHead {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  font-size: 16px;
+}
+.rankH, .rankB{ width: 13%; text-align: center;}
+.rankNameH, .rankNameB { width: 28%; text-align: center;}
+.rankPicH, .rankPicB { width: 32%;text-align: center; font-size: 0px;}
+.cityH, .cityB {width: 14%;}
+.rankNumH, .rankNumB{ width: 13%;text-align: center;}
+.tabelBody {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}

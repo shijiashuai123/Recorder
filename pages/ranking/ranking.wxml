@@ -1,0 +1,33 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <!-- <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view> -->
+            <view>
+                <!-- <view class="weui-tab__content" hidden="{{activeIndex != 0}}">选项一的内容</view> -->
+                <!-- <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view> -->
+                <view class='tableHead'>
+                  <view class='rankH'>排行</view>
+                  <view class='rankNameH'>名称</view>
+                  <view class='rankPicH' style='font-size: 16px;'>头像</view>
+                  <view class='cityH'>地区</view>
+                  <view class='rankNumH'>积分</view>
+                </view>
+                <view class="page__hd tabelBody" wx:for="{{rankList}}" wx:key="*this">
+                    <view class="page__title rankB">{{index + 1}}</view>
+                    <view class="page__desc rankNameB">{{item.programUser.nickName}}</view>
+                    <view class='rankPicB'><image style='width: 50px; height: 50px;' src='{{item.programUser.headImg}}'></image></view>
+                    <view class="page__desc rankNumB">{{item.programUser.city}}</view>
+                    <view class="page__desc rankNumB">{{item.points}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+</view>

@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/logs/logs",
+    "pages/index/index",
+    "pages/ranking/ranking",
+    "pages/home/home",
+    "pages/answer/answer",
+    "pages/commentAnswer/commentAnswer",
+    "pages/myqaList/myqaList",
+    "pages/myCommentList/myCommentList",
+    "pages/myCommentAnswerPage/myCommentAnswerPage",
+    "pages/new/new"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "HIOS社区",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#F7F7F7"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#3dbfe7",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/test/test",
+        "text": "问答",
+        "iconPath": "./pages/index/img/qa.png",
+        "selectedIconPath": "./pages/index/img/qa1.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "./pages/index/img/home.png",
+        "selectedIconPath": "./pages/index/img/home1.png"
+      }
+    ]
+  }
+}
